@@ -34,7 +34,7 @@ export default function ClientHolder() {
                                 </a>
                                 <a href="#">
                                     <img
-                                        src="/src/images/client-image5.png"
+                                        src="../../images/client-image5.png"
                                         alt="client"
                                     />
                                 </a>
