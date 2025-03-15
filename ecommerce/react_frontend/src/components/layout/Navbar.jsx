@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -74,6 +75,7 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
+
                 <header id="header">
                     <div className="container-fluid">
                         <div className="row">
@@ -91,49 +93,17 @@ export default function Navbar() {
                                 <nav id="navbar">
                                     <div className="main-menu stellarnav">
                                         <ul className="menu-list">
-                                            <li className="menu-item active">
-                                                <a href="#home">Home</a>
+                                            <li className="menu-item ">
+                                                <Link to="/">Home</Link>
                                             </li>
-                                            
-                                            <li className="menu-item">
-                                                <a
-                                                    href="#featured-books"
-                                                    className="nav-link"
-                                                >
-                                                    Featured
-                                                </a>
+                                            <li className="menu-item ">
+                                                <Link to="/shop">Shop</Link>
                                             </li>
-                                            <li className="menu-item">
-                                                <a
-                                                    href="#popular-books"
-                                                    className="nav-link"
-                                                >
-                                                    Popular
-                                                </a>
+                                            <li className="menu-item ">
+                                                <Link to="/about">About</Link>
                                             </li>
-                                            <li className="menu-item">
-                                                <a
-                                                    href="#special-offer"
-                                                    className="nav-link"
-                                                >
-                                                    Offer
-                                                </a>
-                                            </li>
-                                            <li className="menu-item">
-                                                <a
-                                                    href="#latest-blog"
-                                                    className="nav-link"
-                                                >
-                                                    Articles
-                                                </a>
-                                            </li>
-                                            <li className="menu-item">
-                                                <a
-                                                    href="#download-app"
-                                                    className="nav-link"
-                                                >
-                                                    Download App
-                                                </a>
+                                            <li className="menu-item ">
+                                                <Link to="/contact">Contact</Link>
                                             </li>
                                         </ul>
                                         <div className="hamburger">

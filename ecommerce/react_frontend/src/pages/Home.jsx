@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <div>
         <Billboard />
-        <ClientHolder />
+        {/* <ClientHolder />
         <Feature />
         <BestSelling />
         <Popular />
         <Quotation />
         <SpecialOffer />
         <Subscribe />
-        <LastBlog />
+        <LastBlog /> */}
     </div>
   )
 }

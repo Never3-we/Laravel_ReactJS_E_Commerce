@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -14,12 +15,9 @@ export default function Footer() {
                                     className="footer-logo"
                                 />
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Sagittis sed ptibus
-                                    liberolectus nonet psryroin. Amet sed lorem
-                                    posuere sit iaculis amet, ac urna.
-                                    Adipiscing fames semper erat ac in
-                                    suspendisse iaculis.
+                                    Stepping into a bookstore is like entering a sanctuary for the mind.
+                                    Soft murmurs of turning pages and the occasional rustle of a plastic bag create a gentle, contemplative ambiance. 
+                                    
                                 </p>
                             </div>
                         </div>
@@ -29,19 +27,13 @@ export default function Footer() {
                             <h5>About Us</h5>
                             <ul className="menu-list">
                                 <li className="menu-item">
-                                    <a href="#">vision</a>
+                                    <Link to="/about">About</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="#">articles </a>
+                                    <Link to="/cart">Cart</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="#">careers</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">service terms</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">donate</a>
+                                    <Link to="/location">Location</Link>
                                 </li>
                             </ul>
                         </div>
@@ -51,57 +43,30 @@ export default function Footer() {
                             <h5>Discover</h5>
                             <ul className="menu-list">
                                 <li className="menu-item">
-                                    <a href="#">Home</a>
+                                    <Link to="/home">Home</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="#">Books</a>
+                                    <Link to="/shop">Books</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="#">Authors</a>
+                                    <Link to="/authors">Authors</Link>
                                 </li>
                                 <li className="menu-item">
                                     <a href="#">Subjects</a>
                                 </li>
-                                <li className="menu-item">
-                                    <a href="#">Advanced Search</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-2">
-                        <div className="footer-menu">
-                            <h5>My account</h5>
-                            <ul className="menu-list">
-                                <li className="menu-item">
-                                    <a href="#">Sign In</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">View Cart</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">My Wishtlist</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">Track My Order</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div className="col-md-2">
                         <div className="footer-menu">
                             <h5>Help</h5>
                             <ul className="menu-list">
                                 <li className="menu-item">
-                                    <a href="#">Help center</a>
-                                </li>
+                                    <Link to="/contact">Help center</Link>
+                                </li> 
                                 <li className="menu-item">
-                                    <a href="#">Report a problem</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">Suggesting edits</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">Contact us</a>
+                                    <Link to="/contact">Contact us</Link>
                                 </li>
                             </ul>
                         </div>
