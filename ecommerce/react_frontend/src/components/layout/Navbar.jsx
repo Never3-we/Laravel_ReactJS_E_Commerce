@@ -12,25 +12,17 @@ export default function Navbar() {
                                 <div className="social-links">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/">
                                                 <i className="icon icon-facebook" />
                                             </a>
                                         </li>
+                                        
                                         <li>
-                                            <a href="#">
-                                                <i className="icon icon-twitter" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
+                                            <a href="https://www.youtube.com/">
                                                 <i className="icon icon-youtube-play" />
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                <i className="icon icon-behance-square" />
-                                            </a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 
