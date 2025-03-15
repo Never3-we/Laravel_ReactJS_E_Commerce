@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import Shop from './pages/Shop';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/shop' element={<h1>Shop</h1>} />
+          <Route path='/shop' element={<Shop />} />
         </Routes>
         <Footer />
       </Router>
