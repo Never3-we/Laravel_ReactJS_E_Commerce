@@ -33,7 +33,7 @@ export default function Footer() {
                                     <Link to="/cart">Cart</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <Link to="/location">Location</Link>
+                                    <a href="https://maps.app.goo.gl/RqM9b87rg5SBoWmj6">Location</a>
                                 </li>
                             </ul>
                         </div>
@@ -50,9 +50,6 @@ export default function Footer() {
                                 </li>
                                 <li className="menu-item">
                                     <Link to="/authors">Authors</Link>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="#">Subjects</a>
                                 </li>
                             </ul>
                         </div>
