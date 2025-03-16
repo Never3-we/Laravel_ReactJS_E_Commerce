@@ -1,4 +1,9 @@
 import React from "react";
+import Client1 from "../../images/client-image1.png";
+import Client2 from "../../images/client-image2.png";
+import Client3 from "../../images/client-image3.png";
+import Client4 from "../../images/client-image4.png";
+import Client5 from "../../images/client-image5.png";
 
 export default function ClientHolder() {
     return (
@@ -7,34 +12,34 @@ export default function ClientHolder() {
                 <div className="row">
                     <div className="inner-content">
                         <div className="logo-wrap">
-                            <div className="grid">
+                            <div className="grid"> 
                                 <a href="#">
                                     <img
-                                        src="/src/images/client-image1.png"
+                                        src={Client1}
                                         alt="client"
                                     />
                                 </a>
                                 <a href="#">
                                     <img
-                                        src="/src/images/client-image2.png"
+                                        src={Client2}
                                         alt="client"
                                     />
                                 </a>
                                 <a href="#">
                                     <img
-                                        src="/src/images/client-image3.png"
+                                        src={Client3}
                                         alt="client"
                                     />
                                 </a>
                                 <a href="#">
                                     <img
-                                        src="/src/images/client-image4.png"
+                                        src={Client4}
                                         alt="client"
                                     />
                                 </a>
                                 <a href="#">
                                     <img
-                                        src="../../images/client-image5.png"
+                                        src={Client5}
                                         alt="client"
                                     />
                                 </a>

@@ -1,5 +1,8 @@
 import React from 'react'
-
+import product1 from '../../images/product-item1.jpg';
+import product2 from '../../images/product-item2.jpg';
+import product3 from '../../images/product-item3.jpg';
+import product4 from '../../images/product-item4.jpg';
 export default function Feature() {
   return (
     <div>
@@ -19,7 +22,7 @@ export default function Feature() {
               <div className="product-item">
                 <figure className="product-style">
                   <img
-                    src="/src/images/product-item1.jpg"
+                    src={product1}
                     alt="Books"
                     className="product-item"
                   />
@@ -42,7 +45,7 @@ export default function Feature() {
               <div className="product-item">
                 <figure className="product-style">
                   <img
-                    src="/src/images/product-item2.jpg"
+                    src={product2}
                     alt="Books"
                     className="product-item"
                   />
@@ -65,7 +68,7 @@ export default function Feature() {
               <div className="product-item">
                 <figure className="product-style">
                   <img
-                    src="/src/images/product-item3.jpg"
+                    src={product3}
                     alt="Books"
                     className="product-item"
                   />
@@ -88,7 +91,7 @@ export default function Feature() {
               <div className="product-item">
                 <figure className="product-style">
                   <img
-                    src="src/images/product-item4.jpg"
+                    src={product4}
                     alt="Books"
                     className="product-item"
                   />

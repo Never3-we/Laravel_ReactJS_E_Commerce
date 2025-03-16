@@ -46,7 +46,7 @@ export default function Popular() {
                                         <div className="product-item">
                                             <figure className="product-style">
                                                 <img
-                                                    src="images/tab-item1.jpg"
+                                                    src="../../images/tab-item1.jpg"
                                                     alt="Books"
                                                     className="product-item"
                                                 />
