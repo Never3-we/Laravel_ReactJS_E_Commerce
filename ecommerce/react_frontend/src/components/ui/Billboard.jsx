@@ -9,13 +9,13 @@ export default function Billboard() {
       id: 1,
       image: Image1,
       title: "Life of the Wild",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu."
+      description: "This book delves into how observing birds can provide valuable lessons for navigating the challenges of human life."
     },
     {
       id: 2,
       image: Image2,
       title: "Birds gonna be Happy",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu."
+      description: "This book is a powerful exploration of primal instincts and the struggle for survival. The central character is Buck, a domesticated dog who is stolen from his comfortable life in California and thrust into the harsh realities of the Klondike Gold Rush."
     }
   ];
 
