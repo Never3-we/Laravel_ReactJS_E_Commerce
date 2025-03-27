@@ -23,32 +23,11 @@ const products = [
     author: "Arthur Doyle",
     price: 45.00
   },
-  // {
-  //   id: 4,
-  //   image: "./src/images/product-item4.jpg",
-  //   title: "Once Upon A Time",
-  //   author: "Klien Marry",
-  //   price: 35.00
-  // },
-  // {
-  //   id: 5,
-  //   image: "./src/images/product-item4.jpg",
-  //   title: "Once Upon A Time",
-  //   author: "Klien Marry",
-  //   price: 35.00
-  // },
-  // {
-  //   id: 6,
-  //   image: "./src/images/product-item4.jpg",
-  //   title: "Once Upon A Time",
-  //   author: "Klien Marry",
-  //   price: 35.00
-  // }
+  
 ];
 
 export default function Shop() {
   const handleAddToCart = (productId) => {
-    // TODO: Implement add to cart functionality
     console.log(`Adding product ${productId} to cart`);
   };
 

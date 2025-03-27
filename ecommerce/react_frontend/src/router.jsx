@@ -3,12 +3,13 @@ import DefaultLayout from './components/layout/DefaultLayout';
 import GuestLayout from './components/layout/GuestLayout';
 import Login from './auth/Login';
 import Register from './auth/Register';
-import Users from './auth/Users';
+// import Users from './auth/Users';
 import NotFound from './pages/NotFound';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
     {
@@ -16,8 +17,8 @@ const router = createBrowserRouter([
         element: <DefaultLayout />, 
         children: [
             {
-                path: '/users',
-                element: <Users />,
+                path: '/',
+                element: <Home />
             },
             {
                 path: '/shop',

@@ -20,14 +20,14 @@ export const ContextProvider = ({ children }) => {
     }
 
     return (
-        <StateContext.Provider value={{
+        <Context.Provider value={{
             user,
             token,
             setUser,
             setToken
         }} >
             {children}
-        </StateContext.Provider>
+        </Context.Provider>
     )
 }
 
