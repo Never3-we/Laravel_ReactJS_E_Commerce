@@ -1,63 +1,37 @@
-import React, { useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axiosClient from '../client/axios-client';
 
 export default function Register() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
-  const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+  const {setUser, setToken} = useContext();
 
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-    if (!formData.password) newErrors.password = 'Password is required';
-    if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters';
-    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsLoading(true);
-    try {
-      // Add your API call here
-      // const response = await fetch('/api/register', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
-      
-      // if (response.ok) {
-      //   navigate('/login');
-      // }
-      
-      console.log('Form submitted:', formData);
-    } catch (error) {
-      setErrors({ submit: 'Registration failed. Please try again.' });
-    } finally {
-      setIsLoading(false);
+    const payload = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+      password_confirm: passwordConfirmRef.current.value,
     }
-  };
-
+    axiosClient.post('/register', payload).then(({data}) => {
+      setUser(data.user)
+      setToken(data.token) 
+    })
+    .catch(err => {
+      const response = err.response;
+      if (response && response.status === 422) {
+        console.log(response.data.errors)
+      }
+    })
+  }
+  
   return (
     <div className="container py-5">
       <div className="row justify-content-center">
@@ -65,81 +39,60 @@ export default function Register() {
           <div className="card shadow">
             <div className="card-body p-5">
               <h2 className="text-center mb-4">Create Account</h2>
-              
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">Full Name</label>
                   <input
                     type="text"
-                    className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                    className={`form-control `}
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    ref={nameRef}
                     placeholder="Enter your full name"
                   />
-                  {errors.name && <div className="invalid-feedback">{errors.name}</div>}
                 </div>
 
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">Email Address</label>
                   <input
                     type="email"
-                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                    className={`form-control `}
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    ref={emailRef}
                     placeholder="Enter your email"
                   />
-                  {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 </div>
 
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">Password</label>
                   <input
                     type="password"
-                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                    className={`form-control `}
                     id="password"
                     name="password"
-                    value={formData.password}
-                    onChange={handleChange}
+                    ref={passwordRef}
                     placeholder="Create a password"
                   />
-                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                 </div>
 
                 <div className="mb-4">
                   <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
                   <input
                     type="password"
-                    className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                    className={`form-control `}
                     id="confirmPassword"
                     name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
+                    ref={passwordConfirmRef}
                     placeholder="Confirm your password"
                   />
-                  {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                 </div>
-
-                {errors.submit && (
-                  <div className="alert alert-danger" role="alert">
-                    {errors.submit}
-                  </div>
-                )}
 
                 <button 
                   type="submit" 
                   className="btn btn-primary w-100" 
-                  disabled={isLoading}
                 >
-                  {isLoading ? (
-                    <>
-                      <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                      Creating account...
-                    </>
-                  ) : 'Create Account'}
+                  Sign up
                 </button>
                 <p className="mb-0 text-center">Already have an account? 
                     <button 

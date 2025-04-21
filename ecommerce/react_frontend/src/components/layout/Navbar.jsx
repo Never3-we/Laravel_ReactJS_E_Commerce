@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -29,13 +29,13 @@ export default function Navbar() {
                             </div>
                             <div className="col-md-6">
                                 <div className="right-element">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/login"
                                         className="user-account for-buy"
                                     >
                                         <i className="icon icon-user" />
                                         <span>Account</span>
-                                    </a>
+                                    </Link>
                                     <a href="#" className="cart for-buy">
                                         <i className="icon icon-clipboard" />
                                         <span>Cart:(0 $)</span>
